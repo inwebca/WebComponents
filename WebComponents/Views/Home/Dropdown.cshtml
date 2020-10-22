@@ -1,0 +1,23 @@
+﻿<h1>Dropdown</h1>
+<designsystem-dropdown data-id="test" data-url="/api/demo"></designsystem-dropdown>
+
+<hr/>
+
+<div id="contenu"></div>
+
+<script type="text/template" id="template">
+    @*On met le .md dans un template*@
+    @Html.Raw(HttpUtility.HtmlDecode(File.ReadAllText(Server.MapPath("~/docs/designsystem-dropdown.md"))))
+</script>
+
+<script>
+    /*on utilise le plugin pour convertir le md en html*/
+    var md = window.markdownit();
+    var template = $('#template').html();
+    var result = md.render(template);
+    $("#contenu").html(result);
+
+    $('#contenu').find("table").each(function () {
+        $(this).addClass("table table-striped");
+    });
+</script>

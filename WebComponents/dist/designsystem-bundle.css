@@ -1,0 +1,11 @@
+designsystem-boite {
+  display: block;
+  color: white; }
+  designsystem-boite .header {
+    background-color: darkred;
+    margin: 0;
+    padding: 10px; }
+  designsystem-boite .content {
+    background-color: cadetblue;
+    margin: 0;
+    padding: 10px; }

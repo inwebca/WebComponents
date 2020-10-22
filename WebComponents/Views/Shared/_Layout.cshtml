@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+
+
+    <script src="~/Scripts/kendo/2020.3.915/jquery.min.js"></script>
+    <script src="~/Scripts/kendo/2020.3.915/kendo.all.min.js"></script>
+    <script src="~/Scripts/kendo/2020.3.915/kendo.aspnetmvc.min.js"></script>
+
+
+    <link href="~/Content/kendo/2020.3.915/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/kendo/2020.3.915/kendo.default.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.0.1/markdown-it.min.js" integrity="sha512-SlHZikheatSIG228QBT+GX3u8CAcacCXM2Q9eqE1PLTJ+UnCjyH4iydXVHHHPpjlc7CHWQo+HacyILzvhLg3OQ==" crossorigin="anonymous"></script>
+
+
+    <link href="~/dist/designsystem-bundle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Design system", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("DatePicker", "DatePicker", "Home")</li>
+                    <li>@Html.ActionLink("Dropdown", "Dropdown", "Home")</li>
+                    <li>@Html.ActionLink("Button", "Button", "Home")</li>
+                    <li>@Html.ActionLink("Boite", "Boite", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/dist/designsystem-bundle.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<h1>Button</h1>
+<designsystem-button texte="mon bouton" id="monBouton"></designsystem-button>
+
+<hr />
+
+<div id="contenu"></div>
+
+<script type="text/template" id="template">
+    @*On met le .md dans un template*@
+    @Html.Raw(HttpUtility.HtmlDecode(File.ReadAllText(Server.MapPath("~/docs/designsystem-button.md"))))
+</script>
+
+
+<script>
+
+    /*on utilise le plugin pour convertir le md en html*/
+    var md = window.markdownit();
+    var template = $('#template').html();
+    var result = md.render(template);
+
+    $("#contenu").html(result);
+
+    $('#contenu').find("table").each(function () {
+        $(this).addClass("table table-striped");
+    });
+
+    $(document).ready(function () {
+        $("#monBouton").on("surClick", function (e) {
+            console.log(e);
+        });
+    });
+</script>

@@ -1,0 +1,25 @@
+{
+  "name": "designsystemwebcomponents",
+  "version": "1.0.0",
+  "description": "",
+  "main": "designsystem-bundle.js",
+  "scripts": {
+    "build": "rollup --config && wca analyze 'scripts/components/*.{js,ts}' --outDir docs",
+    "dev": "rollup --config --watch",
+    "doc": "wca analyze 'scripts/components/*.{js,ts}' --outDir docs"
+  },
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "postcss": "^8.1.1",
+    "rollup-plugin-scss": "^2.6.1",
+    "rollup-watch": "^4.3.1",
+    "web-component-analyzer": "^1.1.6"
+  },
+  "devDependencies": {
+    "@rollup/plugin-multi-entry": "^4.0.0",
+    "lit-element": "^2.4.0",
+    "rollup": "^2.31.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
